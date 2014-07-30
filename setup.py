@@ -12,7 +12,7 @@ def read(fname):
 
 setup(
     name="djangocms-markdown",
-    version=djangocms_markdown.__version__,
+    version='0.1.2',
     description=read('DESCRIPTION'),
     long_description=read('README.rst'),
     license='The MIT License',
