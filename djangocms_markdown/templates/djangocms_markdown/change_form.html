@@ -4,6 +4,7 @@
 {% block field_sets %}
     {{ block.super }}
     <div id="epiceditor"></div>
+    <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
             $(document).ready(function () {
