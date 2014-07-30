@@ -4,17 +4,17 @@
 
 {% block extrastyle %}
 {{ block.super }}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_markdown/themes/base/epiceditor.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}djangocms_markdown/themes/base/epiceditor.css" />
 {% endblock %}
 
 {% block extrahead %}
 {{ block.super }}
-<script src="{{ STATIC_URL }}cmsplugin_markdown/js/epiceditor.min.js"></script>
+<script src="{{ STATIC_URL }}djangocms_markdown/js/epiceditor.min.js"></script>
 <script>
 $(document).ready(function () {
     $('#markdownplugin_form>div').hide();
     var opts = {
-        basePath: '{{ STATIC_URL }}cmsplugin_markdown'
+        basePath: '{{ STATIC_URL }}djangocms_markdown'
         ,clientSideStorage: false
     }
     var editor = new EpicEditor(opts).load();

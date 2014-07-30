@@ -21,19 +21,19 @@ If you want to install the latest stable release from PyPi::
 
 If you feel adventurous and want to install the latest commit from GitHub::
 
-    $ pip install -e git://github.com/bitmazk/cmsplugin-markdown.git#egg=cmsplugin_markdown
+    $ pip install -e git://github.com/bitmazk/cmsplugin-markdown.git#egg=djangocms_markdown
 
-Add ``cmsplugin_markdown`` and ``django.contrib.markup`` to your ``INSTALLED_APPS``::
+Add ``djangocms_markdown`` and ``django.contrib.markup`` to your ``INSTALLED_APPS``::
 
     INSTALLED_APPS = (
         ...,
         'django.contrib.markup',
-        'cmsplugin_markdown',
+        'djangocms_markdown',
     )
 
 Don't forget to migrate your database::
 
-    ./manage.py migrate cmsplugin_markdown
+    ./manage.py migrate djangocms_markdown
 
 Usage
 -----

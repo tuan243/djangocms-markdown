@@ -1,6 +1,6 @@
 import os
 from setuptools import setup, find_packages
-import cmsplugin_markdown
+import djangocms_markdown
 
 
 def read(fname):
@@ -11,16 +11,16 @@ def read(fname):
 
 
 setup(
-    name="cmsplugin-markdown",
-    version=cmsplugin_markdown.__version__,
+    name="djangocms-markdown",
+    version=djangocms_markdown.__version__,
     description=read('DESCRIPTION'),
     long_description=read('README.rst'),
     license='The MIT License',
     platforms=['OS Independent'],
     keywords='django, django-cms, plugin, markdown, editor',
-    author='Tobias Lorenz',
-    author_email='tobias.lorenz@bitmazk.com',
-    url="https://github.com/bitmazk/cmsplugin-markdown",
+    author='Olle Vidner',
+    author_email='olle@vidner.se',
+    url="https://github.com/ovidner/djangocms-markdown",
     packages=find_packages(),
     include_package_data=True,
 )
