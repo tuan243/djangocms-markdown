@@ -1,27 +1,20 @@
-{% load sekizai_tags %}
 {% extends "admin/cms/page/plugin/change_form.html" %}
+{% load staticfiles %}
 
-{% block top %}<div id="epiceditor"></div>{% endblock %}
-
-{% block extrastyle %}
+{% block field_sets %}
     {{ block.super }}
-    {% addtoblock 'js' %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}djangocms_markdown/themes/base/epiceditor.css" />{% endaddtoblock %}
-{% endblock %}
+    <div id="epiceditor"></div>
+    <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
-{% block extrahead %}
-    {{ block.super }}
-    {% addtoblock 'js' %}<script src="{{ STATIC_URL }}djangocms_markdown/js/epiceditor.min.js"></script>{% endaddtoblock %}
-    {% addtoblock 'js' %}
-        <script>
             $(document).ready(function () {
                 $('#markdownplugin_form>div').hide();
                 var opts = {
                     basePath: '{{ STATIC_URL }}djangocms_markdown',
                     clientSideStorage: false
+    <script>
                 textarea: 'id_markdown_text', // Sync with #id_markdown_text
                 }
                 var editor = new EpicEditor(opts).load();
             });
-        </script>
-    {% endaddtoblock %}
+    </script>
 {% endblock %}
