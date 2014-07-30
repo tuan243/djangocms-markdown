@@ -1,6 +1,5 @@
-# flake8: noqa
 # -*- coding: utf-8 -*-
-import datetime
+from south.utils import datetime_utils as datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
@@ -10,23 +9,24 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'MarkdownPlugin'
-        db.create_table('djangocms_markdownplugin', (
-            ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('text', self.gf('django.db.models.fields.TextField')(max_length=8000)),
+        db.create_table(u'djangocms_markdown_markdownplugin', (
+            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+            ('markdown_text', self.gf('django.db.models.fields.TextField')()),
         ))
-        db.send_create_signal('djangocms_markdown', ['MarkdownPlugin'])
+        db.send_create_signal(u'djangocms_markdown', ['MarkdownPlugin'])
 
 
     def backwards(self, orm):
         # Deleting model 'MarkdownPlugin'
-        db.delete_table('djangocms_markdownplugin')
+        db.delete_table(u'djangocms_markdown_markdownplugin')
 
 
     models = {
         'cms.cmsplugin': {
             'Meta': {'object_name': 'CMSPlugin'},
+            'changed_date': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'creation_date': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'language': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
             'level': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             'lft': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
@@ -40,13 +40,13 @@ class Migration(SchemaMigration):
         'cms.placeholder': {
             'Meta': {'object_name': 'Placeholder'},
             'default_width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
         },
-        'djangocms_markdown.markdownplugin': {
-            'Meta': {'object_name': 'MarkdownPlugin', 'db_table': "'djangocms_markdownplugin'", '_ormbases': ['cms.CMSPlugin']},
-            'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
-            'text': ('django.db.models.fields.TextField', [], {'max_length': '8000'})
+        u'djangocms_markdown.markdownplugin': {
+            'Meta': {'object_name': 'MarkdownPlugin', '_ormbases': ['cms.CMSPlugin']},
+            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'markdown_text': ('django.db.models.fields.TextField', [], {})
         }
     }
 
