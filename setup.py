@@ -1,6 +1,5 @@
 import os
 from setuptools import setup, find_packages
-import djangocms_markdown
 
 
 def read(fname):
