@@ -18,13 +18,9 @@
                 var opts = {
                     basePath: '{{ STATIC_URL }}djangocms_markdown',
                     clientSideStorage: false
+                textarea: 'id_markdown_text', // Sync with #id_markdown_text
                 }
                 var editor = new EpicEditor(opts).load();
-                var text = jQuery(editor.getElement('editor').body);
-                text.html($('#id_markdown_text').html().replace(/\n/g, '<br />'));
-                text.keyup(function () {
-                    $('#id_markdown_text').val(editor.exportFile(null, 'text'));
-                });
             });
         </script>
     {% endaddtoblock %}
