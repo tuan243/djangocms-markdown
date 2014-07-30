@@ -13,7 +13,7 @@ setup(
     name="djangocms-markdown",
     version='0.1.2',
     description=read('DESCRIPTION'),
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     license='The MIT License',
     platforms=['OS Independent'],
     keywords='django, django-cms, plugin, markdown, editor',
