@@ -12,9 +12,5 @@ class MarkdownCMSPlugin(CMSPluginBase):
     render_template = 'djangocms_markdown/markdown.html'
     change_form_template = 'djangocms_markdown/change_form.html'
 
-    def render(self, context, instance, placeholder):
-        context['text'] = instance.markdown_text
-        return context
-
 
 plugin_pool.register_plugin(MarkdownCMSPlugin)
