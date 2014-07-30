@@ -6,11 +6,12 @@ from django.db import models
 
 
 class Migration(SchemaMigration):
-
     def forwards(self, orm):
         # Adding model 'MarkdownPlugin'
         db.create_table(u'djangocms_markdown_markdownplugin', (
-            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+            (u'cmsplugin_ptr',
+             self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True,
+                                                                      primary_key=True)),
             ('markdown_text', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal(u'djangocms_markdown', ['MarkdownPlugin'])
@@ -30,8 +31,10 @@ class Migration(SchemaMigration):
             'language': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
             'level': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             'lft': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
-            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.CMSPlugin']", 'null': 'True', 'blank': 'True'}),
-            'placeholder': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Placeholder']", 'null': 'True'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [],
+                       {'to': "orm['cms.CMSPlugin']", 'null': 'True', 'blank': 'True'}),
+            'placeholder': (
+            'django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Placeholder']", 'null': 'True'}),
             'plugin_type': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'}),
             'position': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
             'rght': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
@@ -45,7 +48,8 @@ class Migration(SchemaMigration):
         },
         u'djangocms_markdown.markdownplugin': {
             'Meta': {'object_name': 'MarkdownPlugin', '_ormbases': ['cms.CMSPlugin']},
-            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [],
+                               {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'markdown_text': ('django.db.models.fields.TextField', [], {})
         }
     }

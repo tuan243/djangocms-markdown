@@ -8,7 +8,7 @@
     <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
     <script>
-        $(function(){
+        $(function () {
             // Hide the native fieldset
             $('#markdownplugin_form').find('fieldset').hide();
 
@@ -19,8 +19,8 @@
                 focusOnLoad: true,
                 autogrow: {
                     // One has to manually adjust the height a bit
-                    minHeight: window.parent.$('.cms_modal-frame').height()-20,
-                    maxHeight: window.parent.$('.cms_modal-frame').height()-20
+                    minHeight: window.parent.$('.cms_modal-frame').height() - 20,
+                    maxHeight: window.parent.$('.cms_modal-frame').height() - 20
                 }
             };
 
