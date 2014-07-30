@@ -22,4 +22,10 @@ setup(
     url="https://github.com/ovidner/djangocms-markdown",
     packages=find_packages(),
     include_package_data=True,
+    install_requires=[
+        'Django',
+        'South',
+        'django-cms>=3.0.0',
+        'django-markdown-deux',
+    ],
 )
