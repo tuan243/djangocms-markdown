@@ -1,28 +1,31 @@
 {% extends "admin/cms/page/change_form.html" %}
+{% load sekizai %}
 
 {% block top %}<div id="epiceditor"></div>{% endblock %}
 
 {% block extrastyle %}
-{{ block.super }}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}djangocms_markdown/themes/base/epiceditor.css" />
+    {{ block.super }}
+    {% addtoblock 'js' %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}djangocms_markdown/themes/base/epiceditor.css" />{% endaddtoblock %}
 {% endblock %}
 
 {% block extrahead %}
-{{ block.super }}
-<script src="{{ STATIC_URL }}djangocms_markdown/js/epiceditor.min.js"></script>
-<script>
-$(document).ready(function () {
-    $('#markdownplugin_form>div').hide();
-    var opts = {
-        basePath: '{{ STATIC_URL }}djangocms_markdown'
-        ,clientSideStorage: false
-    }
-    var editor = new EpicEditor(opts).load();
-    var text = jQuery(editor.getElement('editor').body);
-    text.html($('#id_markdown_text').html().replace(/\n/g, '<br />'));
-    text.keyup(function () {
-        $('#id_markdown_text').val(editor.exportFile(null, 'text'));
-    });
-});
-</script>
+    {{ block.super }}
+    {% addtoblock 'js' %}<script src="{{ STATIC_URL }}djangocms_markdown/js/epiceditor.min.js"></script>{% endaddtoblock %}
+    {% addtoblock 'js' %}
+        <script>
+            $(document).ready(function () {
+                $('#markdownplugin_form>div').hide();
+                var opts = {
+                    basePath: '{{ STATIC_URL }}djangocms_markdown',
+                    clientSideStorage: false
+                }
+                var editor = new EpicEditor(opts).load();
+                var text = jQuery(editor.getElement('editor').body);
+                text.html($('#id_markdown_text').html().replace(/\n/g, '<br />'));
+                text.keyup(function () {
+                    $('#id_markdown_text').val(editor.exportFile(null, 'text'));
+                });
+            });
+        </script>
+    {% endaddtoblock %}
 {% endblock %}
