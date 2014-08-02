@@ -8,14 +8,14 @@
     <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
     <script>
-        $(function () {
+        //$(function () {
             // Hide the native fieldset
-            $('#markdownplugin_form').find('fieldset').hide();
+            $('#markdown_form').find('fieldset').hide();
 
             var opts = {
                 basePath: '{% static 'djangocms_markdown' %}',
                 clientSideStorage: false,
-                textarea: 'id_markdown_text', // Sync with #id_markdown_text
+                textarea: 'id_body', // Sync with #id_body
                 focusOnLoad: true,
                 autogrow: {
                     // One has to manually adjust the height a bit
@@ -25,6 +25,9 @@
             };
 
             var editor = new EpicEditor(opts).load();
-        });
+
+            // Get caret position: editor.editorIframeDocument.getSelection().focusOffset
+            // Insert data: editor.editorIframeDocument.getSelection().focusNode.insertData()
+        //});
     </script>
 {% endblock %}
