@@ -1,12 +1,18 @@
-import os
+import io
 from setuptools import setup, find_packages
 
 
-def read(fname):
-    try:
-        return open(os.path.join(os.path.dirname(__file__), fname)).read()
-    except IOError:
-        return ''
+def read(*filenames, **kwargs):
+    """
+    From http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
+    """
+    encoding = kwargs.get('encoding', 'utf-8')
+    sep = kwargs.get('sep', '\n')
+    buf = []
+    for filename in filenames:
+        with io.open(filename, encoding=encoding) as f:
+            buf.append(f.read())
+    return sep.join(buf)
 
 
 setup(
