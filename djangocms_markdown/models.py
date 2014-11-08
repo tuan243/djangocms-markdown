@@ -10,4 +10,4 @@ class Markdown(CMSPlugin):
     body = models.TextField()
 
     def __str__(self):
-        return self.text[:64]
+        return self.body[:64]
