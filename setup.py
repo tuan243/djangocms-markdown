@@ -33,5 +33,7 @@ setup(
         'South',
         'django-cms>=3.0.0',
         'django-markdown-deux',
-    ],
+    ], extras_require = {
+        'Django_less_than_17':  ["South>=1.0"]
+    }
 )
