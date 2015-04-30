@@ -17,7 +17,7 @@ def read(*filenames, **kwargs):
 
 setup(
     name="djangocms-markdown",
-    version='0.3.0',
+    version='0.3.1',
     description=read('DESCRIPTION'),
     long_description=read('README.md'),
     license='The MIT License',
