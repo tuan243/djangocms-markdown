@@ -1,7 +1,9 @@
 djangocms-markdown
 ==================
 
-Forked from the work of Tobias Lorenz (https://github.com/bitmazk/cmsplugin-markdown)
+Forked from https://github.com/ovidner/djangocms-markdown
+
+**Compared to ovidner's version, it adds Django migrations support to work smoothly with Django 1.7+**
 
 This is a plugin for django-cms that aims to replace the standard text plugin
 with it's WYSIWYG editors. With cmsplugin-markdown you can write your content
@@ -12,7 +14,7 @@ Installation
 
 Install from GitHub::
 
-    $ pip install git+https://github.com/ovidner/djangocms-markdown.git#egg=djangocms_markdown
+    $ pip install git+https://github.com/niconoe/djangocms-markdown.git#egg=djangocms_markdown
 
 Add ``djangocms_markdown`` and ``markdown_deux`` to your ``INSTALLED_APPS``::
 
