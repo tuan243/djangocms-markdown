@@ -4,11 +4,12 @@
 {% block field_sets %}
     {{ block.super }}
     <div id="epiceditor"></div>
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{% static 'djangocms_markdown/js/jquery-3.1.0.min.js' %}"></script>
+    <script>jQuery.noConflict();</script>
     <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
     <script>
-        //$(function () {
+        (function($) {
             // Hide the native fieldset
             $('#markdown_form').find('fieldset').hide();
 
@@ -28,6 +29,6 @@
 
             // Get caret position: editor.editorIframeDocument.getSelection().focusOffset
             // Insert data: editor.editorIframeDocument.getSelection().focusNode.insertData()
-        //});
+        })(jQuery);
     </script>
 {% endblock %}
