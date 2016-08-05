@@ -21,7 +21,19 @@
                 autogrow: true
             };
 
-            var editor = new EpicEditor(opts).load();
+            var editor = new EpicEditor(opts).load(function() {
+                var dir = $("body").css("direction");
+                $("iframe").each(function() {
+                    if ($(this).attr("id").substring(0, 10) == "epiceditor") {
+                        var iframe = $(this).contents();
+                        $('html', iframe).attr("dir", dir);
+                        $('iframe', iframe).each(function() {
+                            var subiframe = $(this).contents();
+                            $('html', subiframe).attr("dir", dir);
+                        });
+                    }
+                });
+            });
 
             // Get caret position: editor.editorIframeDocument.getSelection().focusOffset
             // Insert data: editor.editorIframeDocument.getSelection().focusNode.insertData()
