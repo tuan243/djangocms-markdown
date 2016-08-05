@@ -9,7 +9,7 @@
     <script src="{% static 'djangocms_markdown/js/epiceditor.min.js' %}"></script>
 
     <script>
-        (function($) {
+        jQuery(function($) {
             // Hide the native fieldset
             $('#markdown_form').find('fieldset').hide();
 
@@ -18,17 +18,13 @@
                 clientSideStorage: false,
                 textarea: 'id_body', // Sync with #id_body
                 focusOnLoad: true,
-                autogrow: {
-                    // One has to manually adjust the height a bit
-                    minHeight: window.parent.CMS.$('.cms_modal-frame').height() - 20,
-                    maxHeight: window.parent.CMS.$('.cms_modal-frame').height() - 20
-                }
+                autogrow: true
             };
 
             var editor = new EpicEditor(opts).load();
 
             // Get caret position: editor.editorIframeDocument.getSelection().focusOffset
             // Insert data: editor.editorIframeDocument.getSelection().focusNode.insertData()
-        })(jQuery);
+        });
     </script>
 {% endblock %}
