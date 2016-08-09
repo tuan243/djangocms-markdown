@@ -5,6 +5,10 @@ This is a plugin for django-cms that aims to replace the standard text plugin
 with it's WYSIWYG editors. With cmsplugin-markdown you can write your content
 in Markdown using EpicEditor (http://oscargodson.github.com/EpicEditor/)
 
+** There are several versions of djangocms-markdown (aka cmsplugin-markdown)
+floating around. I try to keep this one up-to-date, and easily installable via
+pip. Pull requests welcome! **
+
 Changelog
 ---------
 
@@ -19,9 +23,9 @@ Changelog
 Installation
 ------------
 
-Install from GitHub::
+Install with pip::
 
-    $ pip install git+https://github.com/niconoe/djangocms-markdown.git#egg=djangocms_markdown
+    $ pip install djangocms-markdown
 
 Add ``djangocms_markdown`` and ``markdown_deux`` to your ``INSTALLED_APPS``::
 
@@ -41,11 +45,6 @@ Usage
 Just go to the page admin of django-cms (or the Entries admin of
 cmsplugin-blog) and add a markdown plugin to a placeholder. It should be pretty
 much self-explanatory.
-
-Contribute
-----------
-
-You are very welcome to contribute! Fork off, make a branch and do a pull request.
 
 License
 -------
