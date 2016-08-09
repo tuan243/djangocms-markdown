@@ -17,15 +17,15 @@ def read(*filenames, **kwargs):
 
 setup(
     name="djangocms-markdown",
-    version='0.3.1',
+    version='0.3.2',
     description=read('DESCRIPTION'),
     long_description=read('README.md'),
     license='The MIT License',
     platforms=['OS Independent'],
     keywords='django, django-cms, plugin, markdown, editor',
-    author='Olle Vidner',
-    author_email='olle@vidner.se',
-    url="https://github.com/ovidner/djangocms-markdown",
+    author='Olle Vidner, Nicolas Noé and others.',
+    author_email='nicolas@niconoe.eu',
+    url="https://github.com/niconoe/djangocms-markdown",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[

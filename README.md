@@ -1,13 +1,20 @@
 djangocms-markdown
 ==================
 
-Forked from https://github.com/ovidner/djangocms-markdown
-
-**Compared to ovidner's version, it adds Django migrations support to work smoothly with Django 1.7+**
-
 This is a plugin for django-cms that aims to replace the standard text plugin
 with it's WYSIWYG editors. With cmsplugin-markdown you can write your content
 in Markdown using EpicEditor (http://oscargodson.github.com/EpicEditor/)
+
+Changelog
+---------
+
+### 0.3.2 - 2016/08/09
+* Now uses (and embed) jQuery 3.1.0 (thanks to David D Lowe)
+* Set text direction correctly, now works with RTL languages (thanks to David D Lowe)
+* Minor JS fixes (thanks to David D Lowe)
+
+### 0.3.1 - 2015/04/30 (Forked from https://github.com/ovidner/djangocms-markdown)
+* Support Django Migrations, now works with Django 1.7+
 
 Installation
 ------------
@@ -46,4 +53,5 @@ License
 **Major components:**
 
 * EpicEditor: [MIT license](https://github.com/OscarGodson/EpicEditor/blob/develop/LICENSE)
-* Everything else: [MIT license](https://github.com/ovidner/djangocms-markdown/blob/master/LICENSE)
+* jQuery: MIT license
+* Everything else: [MIT license](https://github.com/niconoe/djangocms-markdown/blob/master/LICENSE)
