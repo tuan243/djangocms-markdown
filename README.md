@@ -1,13 +1,13 @@
 djangocms-markdown
 ==================
 
-This is a plugin for django-cms that aims to replace the standard text plugin
-with it's WYSIWYG editors. With cmsplugin-markdown you can write your content
-in Markdown using EpicEditor (http://oscargodson.github.com/EpicEditor/)
-
 **There are several versions of djangocms-markdown (aka cmsplugin-markdown)
 floating around. I try to keep this one up-to-date and easily installable via
 pip. Pull requests welcome!**
+
+This is a plugin for [django CMS](https://www.django-cms.org/) that aims to replace the standard text plugin
+with it's WYSIWYG editors. With djangocms-markdown you can write your content
+in Markdown using [EpicEditor](http://oscargodson.github.com/EpicEditor/).
 
 Changelog
 ---------
@@ -42,9 +42,8 @@ Migrate your database::
 Usage
 -----
 
-Just go to the page admin of django-cms (or the Entries admin of
-cmsplugin-blog) and add a markdown plugin to a placeholder. It should be pretty
-much self-explanatory.
+Just edit the structure of a page with django CMS and add a Markdown plugin to a placeholder.
+It should be pretty much self-explanatory.
 
 License
 -------
