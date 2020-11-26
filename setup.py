@@ -27,7 +27,7 @@ setup(
     keywords='django, django-cms, plugin, markdown, editor',
     author='Olle Vidner, Nicolas Noé and others.',
     author_email='nicolas@niconoe.eu',
-    url="https://github.com/niconoe/djangocms-markdown",
+    url="https://github.com/tuan243/djangocms-markdown",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
