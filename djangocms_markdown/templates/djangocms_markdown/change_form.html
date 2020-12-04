@@ -36,6 +36,34 @@
                 });
             });
 
+            editor.on("preview", function() {
+                var previewIframe = editor.getElement("previewerIframe");
+                previewIframe.contentWindow.MathJax.typeset();
+            })
+
+            var previewIframeDoc = editor.getElement("previewer");
+            var config = previewIframeDoc.createElement('script');
+            config.text = [
+                "window.MathJax = {",
+                "  tex: {",
+                "    inlineMath: [['$','$'], ['\\\\(','\\\\)']]",
+                "  }",
+                "};",
+            ].join("\n");
+
+            var polyfillScript = previewIframeDoc.createElement('script');
+            polyfillScript.src = 'https://polyfill.io/v3/polyfill.min.js?features=es6';
+            polyfillScript.type = "text/javascript";
+            
+            var mathJaxScript = previewIframeDoc.createElement('script');
+            mathJaxScript.type = "text/javascript";
+            mathJaxScript.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
+            mathJaxScript.async = true;
+
+            previewIframeDoc.body.appendChild(config);
+            previewIframeDoc.body.appendChild(polyfillScript);
+            previewIframeDoc.body.appendChild(mathJaxScript);
+
             // Get caret position: editor.editorIframeDocument.getSelection().focusOffset
             // Insert data: editor.editorIframeDocument.getSelection().focusNode.insertData()
         });
